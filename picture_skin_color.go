@@ -47,14 +47,14 @@ func main() {
                 Green: tmp.G,
                 Blue:  tmp.B,
             }
-            // 使用hsv判断皮肤
+            // Д╫©Г■╗hsvЕ┬╓Ф√╜Г ╝Х┌╓
             hc := rgbToHSV(c)
             if hc.Hue > 0 && hc.Hue < 35 && hc.Saturation > 0.23 && hc.Saturation < 0.68 {
                 nc := color.RGBA{0, 0, 255, 255}
                 i.SetRGBA(x, y, nc)
             }
 
-            // 使用YCbCr判断皮肤
+            // Д╫©Г■╗YCbCrЕ┬╓Ф√╜Г ╝Х┌╓
             yc := rgbToYCbCr(c)
             // if (97.5 <= float64(yc.Cb) && float64(yc.Cb) <= 142.5) &&
             //  (134 <= float64(yc.Cr) && float64(yc.Cr) <= 176) {
@@ -66,7 +66,7 @@ func main() {
                 i.SetRGBA(x, y, nc)
             }
 
-            // 使用rgb判断皮肤
+            // Д╫©Г■╗rgbЕ┬╓Ф√╜Г ╝Х┌╓
             if c.Red > 95 && c.Green > 40 && c.Green < 100 &&
                 c.Blue > 20 && max(c)-min(c) > 15 &&
                 math.Abs(float64(c.Red-c.Green)) > 15 &&
